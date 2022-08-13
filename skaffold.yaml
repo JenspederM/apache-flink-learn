@@ -1,0 +1,11 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: apache-flink-learn
+deploy:
+  kubectl:
+    manifests:
+      - "manifests/flink-configuration-configmap.yaml"
+      - "manifests/jobmanager-service.yaml"
+      - "manifests/jobmanager-session-deployment-non-ha.yaml"
+      - "manifests/taskmanager-session-deployment.yaml"
